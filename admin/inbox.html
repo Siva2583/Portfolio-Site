@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#0a0e10" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/admin/admin.css" />
+    <title>Private Inbox — Siva Charan</title>
+    <script type="module" src="/admin/admin.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#admin-main">Skip to inbox</a>
+    <header class="admin-header">
+      <a class="admin-brand" href="/"><span class="admin-mark">SC</span><span>SIVA CHARAN <small>/ PRIVATE INBOX</small></span></a>
+      <a class="return-link" href="/">Return to portfolio <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="admin-main" id="admin-main">
+      <div class="admin-loading" id="loading-view" role="status" aria-live="polite"><span class="loader-mark" aria-hidden="true"></span><span>CHECKING PRIVATE SESSION…</span></div>
+
+      <section class="admin-card auth-card" id="login-view" hidden aria-labelledby="login-title">
+        <div class="admin-overline">AUTHENTICATED ACCESS / SUPABASE AUTH</div>
+        <h1 id="login-title">Private inbox</h1>
+        <p>Sign in with the provisioned admin account. Access is checked server-side on every request.</p>
+        <form id="login-form" class="admin-form" action="/api/admin/login" method="post" novalidate>
+          <label class="admin-field"><span>Email</span><input name="email" type="email" autocomplete="username" maxlength="254" required /></label>
+          <label class="admin-field"><span>Password</span><input name="password" type="password" autocomplete="current-password" maxlength="256" required /></label>
+          <button class="admin-button admin-button-primary" type="submit"><span data-login-label>Sign in</span><span aria-hidden="true">→</span></button>
+          <p class="admin-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <p class="admin-footnote">No sample messages are shown. If this installation is not configured, its private service will say so rather than display placeholder content.</p>
+      </section>
+
+      <section class="admin-card unavailable-card" id="unavailable-view" hidden aria-labelledby="unavailable-title">
+        <div class="admin-overline">PRIVATE SERVICE / UNAVAILABLE</div>
+        <h1 id="unavailable-title">Inbox not configured</h1>
+        <p>The server could not verify a Supabase session or connect to the inbox. No messages were loaded. Configure the server environment, then try again.</p>
+        <button class="admin-button admin-button-primary" type="button" data-retry>Retry connection <span aria-hidden="true">↻</span></button>
+        <p class="admin-feedback" id="unavailable-feedback" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="inbox-view" id="inbox-view" hidden aria-labelledby="inbox-title">
+        <div class="inbox-heading">
+          <div><div class="admin-overline">PRIVATE COMMUNICATIONS / SERVER-AUTHORIZED</div><h1 id="inbox-title">Inbox <span class="unread-count" id="unread-count">0 unread</span></h1></div>
+          <div class="inbox-actions"><span class="admin-session-email" id="session-email"></span><button class="admin-button admin-button-quiet" type="button" data-refresh>Refresh</button><button class="admin-button admin-button-quiet" type="button" data-logout>Sign out</button></div>
+        </div>
+        <div class="inbox-layout">
+          <aside class="message-list-panel" aria-label="Messages">
+            <div class="list-heading"><span>RECENT MESSAGES</span><span id="message-total">0</span></div>
+            <ol class="message-list" id="message-list" aria-label="Inbox messages"></ol>
+            <div class="empty-state" id="empty-state" hidden><span class="empty-mark" aria-hidden="true">—</span><h2>NO MESSAGES YET</h2><p>Your engineering command center is quiet.</p></div>
+          </aside>
+          <section class="message-detail" id="message-detail" aria-label="Message details" aria-live="polite">
+            <div class="detail-empty"><span class="detail-index">SELECT A MESSAGE</span><p>Choose a message to inspect its details and reply securely.</p></div>
+          </section>
+        </div>
+        <p class="admin-feedback inbox-feedback" id="inbox-feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <dialog class="confirm-dialog" id="delete-confirm-dialog" aria-labelledby="delete-confirm-title">
+      <form method="dialog" class="confirm-dialog-content">
+        <div class="admin-overline">INBOX ACTION / IRREVERSIBLE</div>
+        <h2 id="delete-confirm-title">Delete this message?</h2>
+        <p>The message will be permanently removed from the private inbox. This cannot be undone.</p>
+        <div class="confirm-dialog-actions"><button class="admin-button admin-button-quiet" value="cancel">Keep message</button><button class="admin-button admin-button-danger" value="delete">Delete permanently</button></div>
+      </form>
+    </dialog>
+    <footer class="admin-footer"><span>PRIVATE INBOX</span><span>Never share the admin URL as a public contact page.</span></footer>
+  </body>
+</html>
