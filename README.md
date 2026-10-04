@@ -14,7 +14,7 @@ A responsive engineering portfolio and private contact inbox for **Siva Charan �
 
 ## Owner’s guide
 
-For installing the project on your computer, the commands to run it, where personal information lives, how to replace the Recruiter Mode initials with a real photo, and deployment checks, see the [Portfolio Owner Guide PDF](PORTFOLIO-OWNER-GUIDE.pdf). Its editable source is [`docs/PORTFOLIO-OWNER-GUIDE.md`](docs/PORTFOLIO-OWNER-GUIDE.md).
+For setup, local run commands, personal-info edits, replacing the Recruiter Mode initials with your own photo, and deployment checks, see the editable [Portfolio Owner Guide](docs/PORTFOLIO-OWNER-GUIDE.md).
 
 ## Architecture
 
@@ -46,7 +46,6 @@ The original repo had no framework or backend. This implementation keeps the pub
 ├── tests/                       Node test-runner tests
 ├── scripts/                     Local API/static server and static build copier
 ├── docs/                        Editable installation and owner guide
-├── PORTFOLIO-OWNER-GUIDE.pdf    Printable install/edit/deploy guide
 ├── public/                       Optional real resume PDF (not present in this checkout)
 ├── .env.example                 Environment-variable names only
 ├── vercel.json                  Static output, rewrite, and security headers

@@ -4,7 +4,7 @@
 - **Guide version:** 1.0 · 4 October 2026
 - **Purpose:** Install and run the site on your computer, find the right files when your details change, and safely publish updates.
 
-> The editable portfolio is the project folder itself. This guide is also included as `PORTFOLIO-OWNER-GUIDE.pdf` in the repository root.
+> The editable portfolio is the project folder itself. For deeper API, database, and deployment details, see the project [README.md](../README.md).
 
 ## 1. Before you start
 
