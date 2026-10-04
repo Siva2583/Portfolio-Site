@@ -1,779 +1,319 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Siva Charan KG — Full Stack & AI Engineer. Building production-grade AI-powered systems. Infosys Intern. Open to SWE roles."/>
-<title>SIVA CHARAN KG — FULL STACK & AI ENGINEER</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --black:#040507;
-  --surface:#080b10;
-  --surface2:#0d1117;
-  --surface3:#141b25;
-  --green:#00ff88;
-  --green2:#00cc6a;
-  --green3:rgba(0,255,136,0.08);
-  --amber:#f5a623;
-  --red:#ff4d6a;
-  --text:#c9d1d9;
-  --text2:#8b949e;
-  --text3:#3d444d;
-  --border:rgba(0,255,136,0.12);
-  --border2:rgba(0,255,136,0.06);
-  --mono:'Share Tech Mono',monospace;
-  --display:'Bebas Neue',sans-serif;
-  --body:'DM Sans',sans-serif;
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--black);color:var(--text);font-family:var(--body);overflow-x:hidden;cursor:crosshair}
-::selection{background:var(--green);color:#000}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--surface)}
-::-webkit-scrollbar-thumb{background:var(--green)}
-a{text-decoration:none;color:inherit}
-body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.12) 2px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:56px;background:rgba(4,5,7,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
-.nav-logo{font-family:var(--mono);font-size:0.9rem;color:var(--green);display:flex;align-items:center;gap:8px}
-.nav-logo::before{content:'>';color:var(--green);animation:blink 1s step-end infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-family:var(--mono);font-size:0.72rem;color:var(--text2);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
-.nav-links a::before{content:'[';opacity:0;transition:opacity 0.2s;color:var(--green)}
-.nav-links a::after{content:']';opacity:0;transition:opacity 0.2s;color:var(--green)}
-.nav-links a:hover::before,.nav-links a:hover::after,.nav-links a.active::before,.nav-links a.active::after{opacity:1}
-.nav-links a:hover,.nav-links a.active{color:var(--green)}
-.nav-actions{display:flex;align-items:center;gap:1rem}
-.btn-terminal{font-family:var(--mono);font-size:0.72rem;padding:6px 16px;border:1px solid var(--green);color:var(--green);background:transparent;cursor:crosshair;transition:all 0.2s;letter-spacing:0.06em}
-.btn-terminal:hover{background:var(--green);color:#000}
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-.hamburger span{width:22px;height:1px;background:var(--green)}
-section{position:relative;z-index:1;padding:100px 3rem}
-.container{max-width:1120px;margin:0 auto}
-.sec-tag{font-family:var(--mono);font-size:0.7rem;color:var(--green2);letter-spacing:0.2em;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem}
-.sec-tag::before{content:'//';color:var(--text3)}
-.sec-title{font-family:var(--display);font-size:clamp(3.5rem,7vw,7rem);letter-spacing:0.04em;line-height:0.9;color:var(--text);margin-bottom:2.5rem}
-.sec-title .accent{-webkit-text-stroke:1px var(--green);color:transparent}
-#hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;padding-bottom:60px}
-.hero-grid{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center}
-.hero-eyebrow{font-family:var(--mono);font-size:0.75rem;color:var(--text2);letter-spacing:0.12em;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--green)}
-.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-dot 2s ease-in-out infinite}
-@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,0.4)}50%{box-shadow:0 0 0 8px rgba(0,255,136,0)}}
-.hero-name{font-family:var(--display);font-size:clamp(4.5rem,9vw,9rem);letter-spacing:0.06em;line-height:0.85;margin-bottom:1.5rem}
-.hero-name .line1{color:var(--text)}
-.hero-name .line2{-webkit-text-stroke:2px var(--green);color:transparent;display:block}
-.hero-tagline{font-family:var(--mono);font-size:clamp(0.75rem,1.5vw,0.95rem);color:var(--green);letter-spacing:0.05em;margin-bottom:2rem;min-height:1.5em}
-.hero-tagline .cursor{border-right:2px solid var(--green);animation:blink 0.7s step-end infinite}
-.hero-bio{font-size:0.95rem;color:var(--text2);line-height:1.9;max-width:520px;margin-bottom:2.5rem}
-.hero-bio strong{color:var(--green);font-weight:500}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary-hero{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.08em;padding:12px 28px;background:var(--green);color:#000;border:1px solid var(--green);cursor:crosshair;transition:all 0.2s;text-transform:uppercase}
-.btn-primary-hero:hover{background:transparent;color:var(--green)}
-.btn-outline-hero{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.08em;padding:12px 28px;background:transparent;color:var(--text2);border:1px solid var(--text3);cursor:crosshair;transition:all 0.2s;text-transform:uppercase}
-.btn-outline-hero:hover{border-color:var(--green);color:var(--green)}
-.hero-metrics{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--border2)}
-.metric-val{font-family:var(--display);font-size:2.5rem;color:var(--green);letter-spacing:0.05em;line-height:1}
-.metric-lbl{font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.2rem}
-.term-window{background:var(--surface2);border:1px solid var(--border);position:relative;overflow:hidden}
-.term-window::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,136,0.03) 0%,transparent 60%)}
-.term-bar{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
-.term-dot{width:10px;height:10px;border-radius:50%}
-.term-body{padding:1.5rem;font-family:var(--mono);font-size:0.78rem}
-.term-line{display:flex;gap:0.5rem;margin-bottom:0.5rem;line-height:1.6}
-.term-prompt{color:var(--green);flex-shrink:0}
-.term-cmd{color:var(--text)}
-.term-output{color:var(--text2);padding-left:1rem;margin-bottom:0.5rem;font-size:0.75rem}
-.term-output.green{color:var(--green)}
-.term-output.amber{color:var(--amber)}
-.term-output.dim{color:var(--text3)}
-.term-blink{animation:blink 1s step-end infinite;color:var(--green)}
-#about{border-top:1px solid var(--border2)}
-.about-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
-.about-sidebar{position:sticky;top:80px}
-.about-ascii{font-family:var(--mono);font-size:0.62rem;color:var(--text3);line-height:1.3;margin-bottom:2rem;white-space:pre}
-.stat-block{border:1px solid var(--border);padding:1.25rem;margin-bottom:1rem;position:relative;overflow:hidden}
-.stat-block::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--green)}
-.stat-block-label{font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem}
-.stat-block-val{font-family:var(--display);font-size:2rem;color:var(--green);letter-spacing:0.04em}
-.about-body p{font-size:1rem;color:var(--text2);line-height:1.9;margin-bottom:1.5rem}
-.about-body p strong{color:var(--text);font-weight:500}
-.callout{border:1px solid var(--border);border-left:2px solid var(--green);padding:1.25rem 1.5rem;margin:2rem 0;background:var(--green3)}
-.callout p{margin:0;font-family:var(--mono);font-size:0.82rem;color:var(--green2);line-height:1.8}
-#skills{border-top:1px solid var(--border2);background:var(--surface)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;border:1px solid var(--border2)}
-.skill-cell{padding:1.75rem;background:var(--surface2);transition:background 0.25s;border:1px solid transparent}
-.skill-cell:hover{background:var(--surface3);border-color:var(--border)}
-.skill-cell-head{font-family:var(--mono);font-size:0.7rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem}
-.skill-cell-head::before{content:'#';color:var(--text3)}
-.skills-row{display:flex;flex-wrap:wrap;gap:0.5rem}
-.s-chip{font-family:var(--mono);font-size:0.72rem;padding:4px 12px;border:1px solid;transition:all 0.2s;cursor:default;letter-spacing:0.04em}
-.s-chip.g{border-color:rgba(0,255,136,0.25);color:var(--green2);background:rgba(0,255,136,0.04)}
-.s-chip.g:hover{background:var(--green);color:#000;border-color:var(--green)}
-.s-chip.a{border-color:rgba(245,166,35,0.25);color:#d4962a;background:rgba(245,166,35,0.04)}
-.s-chip.a:hover{background:var(--amber);color:#000;border-color:var(--amber)}
-.s-chip.r{border-color:rgba(255,77,106,0.2);color:#e04060;background:rgba(255,77,106,0.04)}
-.s-chip.r:hover{background:var(--red);color:#fff;border-color:var(--red)}
-.s-chip.w{border-color:rgba(201,209,217,0.15);color:var(--text2);background:rgba(201,209,217,0.03)}
-.s-chip.w:hover{border-color:var(--text2);color:var(--text)}
-#experience{border-top:1px solid var(--border2)}
-.exp-entry{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--border2);padding:2.5rem 0;transition:background 0.2s}
-.exp-entry:last-child{border-bottom:1px solid var(--border2)}
-.exp-entry:hover{background:rgba(0,255,136,0.015)}
-.exp-left{padding-right:2rem}
-.exp-period{font-family:var(--mono);font-size:0.7rem;color:var(--text3);letter-spacing:0.06em;line-height:1.8;margin-bottom:0.75rem}
-.exp-company{font-family:var(--mono);font-size:0.78rem;color:var(--green);letter-spacing:0.04em}
-.exp-role{font-family:var(--display);font-size:2rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.75rem;line-height:1}
-.exp-bullets{list-style:none;margin-top:1rem}
-.exp-bullets li{font-size:0.88rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.5rem;position:relative;line-height:1.7;border-bottom:1px solid var(--border2)}
-.exp-bullets li:last-child{border-bottom:none}
-.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--green);font-family:var(--mono);font-size:0.75rem}
-.exp-bullets li strong{color:var(--text);font-weight:500}
-.exp-stack{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem}
-.exp-tag{font-family:var(--mono);font-size:0.65rem;padding:2px 8px;border:1px solid var(--border2);color:var(--text3);letter-spacing:0.06em}
-#projects{border-top:1px solid var(--border2);background:var(--surface)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1px;border:1px solid var(--border2)}
-.proj-card{background:var(--surface2);padding:2rem;display:flex;flex-direction:column;border:1px solid transparent;transition:all 0.3s;position:relative;overflow:hidden}
-.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
-.proj-card:hover::before{transform:scaleX(1)}
-.proj-card:hover{background:var(--surface3);border-color:var(--border)}
-.proj-num{font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.12em;margin-bottom:1rem}
-.proj-name{font-family:var(--display);font-size:2.2rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.75rem;line-height:1}
-.proj-desc{font-size:0.875rem;color:var(--text2);line-height:1.75;margin-bottom:1.25rem;flex:1}
-.proj-highlights{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:1.25rem}
-.proj-highlight{font-family:var(--mono);font-size:0.7rem;color:var(--green2);display:flex;align-items:center;gap:0.5rem}
-.proj-highlight::before{content:'◆';font-size:0.45rem;color:var(--green)}
-.proj-stack{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1.25rem}
-.proj-stack-tag{font-family:var(--mono);font-size:0.65rem;padding:2px 8px;border:1px solid var(--border);color:var(--text3);letter-spacing:0.04em}
-.proj-links{display:flex;gap:0.75rem;margin-top:auto}
-.plink{font-family:var(--mono);font-size:0.7rem;padding:6px 14px;border:1px solid;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;cursor:pointer;display:inline-block}
-.plink.gh{border-color:var(--text3);color:var(--text3)}
-.plink.gh:hover{border-color:var(--text);color:var(--text)}
-.plink.live{border-color:var(--green);color:var(--green)}
-.plink.live:hover{background:var(--green);color:#000}
-#achievements{border-top:1px solid var(--border2)}
-.achieve-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;border:1px solid var(--border2)}
-.achieve-cell{padding:2rem 1.5rem;background:var(--surface2);border:1px solid transparent;transition:all 0.3s;position:relative;overflow:hidden}
-.achieve-cell:hover{background:var(--surface3);border-color:var(--border)}
-.achieve-cell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);opacity:0;transition:opacity 0.3s}
-.achieve-cell:hover::after{opacity:1}
-.achieve-val{font-family:var(--display);font-size:3rem;color:var(--green);letter-spacing:0.04em;line-height:1;margin-bottom:0.5rem}
-.achieve-lbl{font-family:var(--mono);font-size:0.7rem;color:var(--text2);letter-spacing:0.08em}
-.achieve-sub{font-family:var(--mono);font-size:0.62rem;color:var(--text3);letter-spacing:0.06em;margin-top:0.25rem}
-#education{border-top:1px solid var(--border2);background:var(--surface)}
-.edu-entry{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--border2);padding:2rem 0}
-.edu-entry:last-child{border-bottom:1px solid var(--border2)}
-.edu-year{font-family:var(--mono);font-size:0.7rem;color:var(--text3);line-height:1.8;letter-spacing:0.04em}
-.edu-degree{font-family:var(--display);font-size:1.8rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.4rem;line-height:1}
-.edu-inst{font-size:0.875rem;color:var(--text2);margin-bottom:0.75rem}
-.edu-score{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.75rem;color:var(--green);border:1px solid var(--border);padding:4px 12px;letter-spacing:0.06em}
-.edu-score::before{content:'◆';font-size:0.4rem}
-#certifications{border-top:1px solid var(--border2)}
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;border:1px solid var(--border2)}
-.cert-cell{padding:1.5rem;background:var(--surface2);display:flex;flex-direction:column;gap:0.4rem;border:1px solid transparent;transition:all 0.25s}
-.cert-cell:hover{background:var(--surface3);border-color:var(--border)}
-.cert-issuer{font-family:var(--mono);font-size:0.65rem;color:var(--green2);letter-spacing:0.1em;text-transform:uppercase}
-.cert-name{font-size:0.88rem;color:var(--text);line-height:1.4}
-.cert-badge{font-family:var(--mono);font-size:0.62rem;color:var(--text3);letter-spacing:0.06em;margin-top:0.25rem;display:flex;align-items:center;gap:4px}
-.cert-badge::before{content:'✓';color:var(--green);font-size:0.65rem}
-#contact{border-top:1px solid var(--border2);background:var(--surface)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
-.contact-left p{font-size:0.95rem;color:var(--text2);line-height:1.9;margin-bottom:2rem}
-.contact-left strong{color:var(--green);font-weight:500}
-.social-list{display:flex;flex-direction:column}
-.social-item{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border2);transition:all 0.2s}
-.social-item:first-child{border-top:1px solid var(--border2)}
-.social-item:hover{padding-left:0.5rem}
-.social-icon{font-family:var(--mono);font-size:0.65rem;color:var(--text3);width:80px;letter-spacing:0.06em;flex-shrink:0}
-.social-val{font-size:0.88rem;color:var(--text2);transition:color 0.2s}
-.social-item:hover .social-val{color:var(--green)}
-.contact-form-wrap{display:flex;flex-direction:column;gap:1.25rem}
-.form-label{font-family:var(--mono);font-size:0.7rem;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;display:block}
-.form-input{width:100%;padding:10px 14px;background:var(--surface3);border:1px solid var(--border);color:var(--text);font-family:var(--body);font-size:0.88rem;outline:none;transition:border-color 0.2s}
-.form-input:focus{border-color:var(--green);background:var(--surface2)}
-.form-input::placeholder{color:var(--text3);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.04em}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-textarea.form-input{resize:none}
-.btn-send{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;background:var(--green);color:#000;border:1px solid var(--green);cursor:crosshair;transition:all 0.2s;width:100%}
-.btn-send:hover{background:transparent;color:var(--green)}
-footer{position:relative;z-index:1;border-top:1px solid var(--border2);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--black)}
-.footer-id{font-family:var(--mono);font-size:0.72rem;color:var(--text3);letter-spacing:0.08em}
-.footer-id span{color:var(--green)}
-.footer-mid{font-family:var(--mono);font-size:0.65rem;color:var(--text3);text-align:center;letter-spacing:0.08em}
-.footer-mid span{color:var(--amber)}
-.footer-right{font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.06em}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1)}
-.reveal.visible{opacity:1;transform:none}
-.mob-menu{display:none;position:fixed;inset:0;z-index:998;background:rgba(4,5,7,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;border:1px solid var(--border)}
-.mob-menu.open{display:flex}
-.mob-menu a{font-family:var(--display);font-size:3rem;color:var(--text2);letter-spacing:0.08em;transition:color 0.2s}
-.mob-menu a:hover{color:var(--green)}
-.mob-close{position:absolute;top:1.5rem;right:2rem;font-family:var(--mono);font-size:1.5rem;color:var(--text3);cursor:pointer;transition:color 0.2s;background:none;border:none}
-.mob-close:hover{color:var(--green)}
-@media(max-width:900px){
-  nav{padding:0 1.5rem}
-  section{padding:80px 1.5rem}
-  footer{padding:1.5rem}
-  .hero-grid{grid-template-columns:1fr}
-  .term-window{display:none}
-  .about-layout{grid-template-columns:1fr}
-  .about-sidebar{position:static}
-  .exp-entry{grid-template-columns:1fr}
-  .exp-left{padding:0 0 1rem}
-  .edu-entry{grid-template-columns:1fr}
-  .edu-year{margin-bottom:0.5rem}
-  .contact-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .btn-terminal{display:none}
-}
-@media(max-width:600px){
-  .hero-name{font-size:clamp(3.5rem,15vw,5rem)}
-  .sec-title{font-size:clamp(2.5rem,12vw,4rem)}
-  .achieve-grid{grid-template-columns:1fr 1fr}
-  .proj-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr}
-  .certs-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;text-align:center}
-}
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0e10" />
+    <meta name="description" content="Siva Charan — Software Engineer & Systems Builder. Engineering across backend systems, AI applications, interactive algorithms, and full-stack products." />
+    <meta name="author" content="Siva Charan" />
+    <link rel="canonical" href="https://protofolio-site.vercel.app/" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/site.css?v=recruiter-brief-2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Siva Charan — Software Engineer & Systems Builder" />
+    <meta property="og:description" content="I build systems that make complexity visible." />
+    <meta property="og:url" content="https://protofolio-site.vercel.app/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Siva Charan — Software Engineer & Systems Builder" />
+    <meta name="twitter:description" content="Backend systems, AI applications, interactive engineering, and full-stack products." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Siva Charan",
+        "jobTitle": "Software Engineer & Systems Builder",
+        "url": "https://protofolio-site.vercel.app/",
+        "sameAs": [
+          "https://github.com/Siva2583",
+          "https://www.linkedin.com/in/siva-charan-kg-72a900284/",
+          "https://leetcode.com/u/siva_2853/"
+        ]
+      }
+    </script>
+    <title>Siva Charan — Software Engineer &amp; Systems Builder</title>
+    <script type="module" src="/assets/site.js"></script>
+  </head>
+  <body class="homepage">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-grid" aria-hidden="true"></div>
 
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" onclick="closeMob()">×</button>
-  <a href="#about" onclick="closeMob()">ABOUT</a>
-  <a href="#skills" onclick="closeMob()">SKILLS</a>
-  <a href="#experience" onclick="closeMob()">WORK</a>
-  <a href="#projects" onclick="closeMob()">PROJECTS</a>
-  <a href="#contact" onclick="closeMob()">CONTACT</a>
-</div>
+    <header class="site-header" id="top">
+      <a class="wordmark" href="#top" aria-label="Siva Charan, home"><span class="wordmark-mark">SC</span><span>SIVA CHARAN</span></a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#systems">Work</a>
+        <a href="#systems">Systems</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="shortcut-button" type="button" data-open-palette aria-label="Open command palette">
+          <span>⌘ K</span>
+        </button>
+        <button class="button button-small button-quiet recruiter-trigger" type="button" aria-label="Open recruiter mode, 90-second profile" data-open-recruiter>
+          <span class="button-signal" aria-hidden="true"></span> Recruiter mode
+        </button>
+        <button class="mobile-menu-button" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu" data-menu-toggle>
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-<nav id="navbar">
-  <div class="nav-logo">SIVA_CHARAN</div>
-  <div class="nav-links">
-    <a href="#about">ABOUT</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#experience">WORK</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#certifications">CERTS</a>
-    <a href="#contact">CONTACT</a>
-  </div>
-  <div class="nav-actions">
-    <a href="#contact" class="btn-terminal">HIRE ME</a>
-    <div class="hamburger" onclick="openMob()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-eyebrow">
-        <span class="status-dot"></span>
-        AVAILABLE FOR INTERNSHIPS &amp; SWE ROLES
-      </div>
-      <div class="hero-name">
-        <span class="line1">SIVA</span>
-        <span class="line2">CHARAN</span>
-        <span class="line1">KG</span>
-      </div>
-      <div class="hero-tagline">
-        <span id="tw"></span><span class="cursor"> </span>
-      </div>
-      <p class="hero-bio">
-  Final-year CSE student at GPCET engineering modern web platforms. Specializing in <strong>React, SpringBoot and PostgreSQL</strong> architectures, with growing expertise in Java backends and ML pipelines to ship complete, production-ready software.
-</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn-primary-hero">HIRE ME</a>
-        <a href="#projects" class="btn-outline-hero">PROJECTS</a>
-        <a href="Resume_Siva-Charan.pdf" download class="btn-outline-hero" style="border-color:rgba(0,255,136,0.3);color:var(--green2)">RESUME ↓</a>
-      </div>
-      <div class="hero-metrics">
-        <div class="metric-item">
-          <div class="metric-val counter" data-target="8.55">0</div>
-          <div class="metric-lbl">CGPA</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-val" style="font-size:1.8rem;padding-top:0.35rem">60%</div>
-          <div class="metric-lbl">LOAD TIME CUT</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-val counter" data-target="6">0</div>
-          <div class="metric-lbl">CERTIFICATIONS</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-val counter" data-target="3">0</div>
-          <div class="metric-lbl">LIVE PROJECTS</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="term-window">
-      <div class="term-bar">
-        <div class="term-dot" style="background:#ff5f57"></div>
-        <div class="term-dot" style="background:#ffbd2e"></div>
-        <div class="term-dot" style="background:#28c840"></div>
-        <span style="font-family:var(--mono);font-size:0.65rem;color:var(--text3);margin-left:auto">siva@portfolio ~ zsh</span>
-      </div>
-      <div class="term-body">
-        <div class="term-line"><span class="term-prompt">$</span><span class="term-cmd">whoami</span></div>
-        <div class="term-output green">siva_charan_kg</div>
-        <div class="term-line"><span class="term-prompt">$</span><span class="term-cmd">cat ./profile.json</span></div>
-        <div class="term-output">{</div>
-        <div class="term-output">&nbsp;&nbsp;"role": "Full Stack + AI Engineer",</div>
-        <div class="term-output">&nbsp;&nbsp;"college": "GPCET · CSE · 2027",</div>
-        <div class="term-output green">&nbsp;&nbsp;"cgpa": 8.55,</div>
-        <div class="term-output">&nbsp;&nbsp;"intern": "Infosys SpringBoard",</div>
-        <div class="term-output amber">&nbsp;&nbsp;"stack": ["React","Python","SpringBoot"],</div>
-        <div class="term-output">&nbsp;&nbsp;"ml": "Random Forest · Scikit-learn",</div>
-        <div class="term-output green">&nbsp;&nbsp;"status": "OPEN_TO_WORK"</div>
-        <div class="term-output">}</div>
-        <div class="term-line" style="margin-top:0.5rem"><span class="term-prompt">$</span><span class="term-cmd">ls ./projects</span></div>
-        <div class="term-output green">voyager/&nbsp;&nbsp;&nbsp;algoviz/&nbsp;&nbsp;&nbsp;edu2job-spring/</div>
-        <div class="term-line"><span class="term-prompt">$</span><span class="term-cmd">git log --oneline -3</span></div>
-        <div class="term-output dim">a3f9c21 feat: parallel API calls (60% faster)</div>
-        <div class="term-output dim">b82d441 fix: budget enforcement algorithm</div>
-        <div class="term-output dim">c11e008 add: N-Queens backtracking viz</div>
-        <div class="term-line" style="margin-top:0.5rem"><span class="term-prompt">$</span><span class="term-blink">█</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-sidebar reveal">
-        <pre class="about-ascii"> ___  ___
-/ __|| __|
-\__ \| _|
-|___/|___| 
-
-FULL STACK
-+ AI ENG.</pre>
-        <div class="stat-block">
-          <div class="stat-block-label">CGPA</div>
-          <div class="stat-block-val">8.55</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-label">LOCATION</div>
-          <div class="stat-block-val" style="font-size:1rem;font-family:var(--mono);color:var(--text2)">KURNOOL, AP</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-label">INTERN @</div>
-          <div class="stat-block-val" style="font-size:1.1rem;font-family:var(--mono);color:var(--green)">INFOSYS</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-label">EMAIL</div>
-          <div class="stat-block-val" style="font-size:0.6rem;font-family:var(--mono);color:var(--text2);letter-spacing:0.02em">kgsivacharan2005@gmail.com</div>
-        </div>
-      </div>
-      <div class="about-body reveal">
-        <div class="sec-tag">WHO I AM</div>
-        <h2 class="sec-title">I build things <span class="accent">that ship.</span></h2>
-        <p>
-  I'm a Computer Science student focused on building <strong>full-stack systems, visualization platforms, and AI-assisted applications</strong> with strong emphasis on backend architecture and real engineering depth.
-</p>
-
-<p>
-  One of my major projects, <strong>AlgoViz</strong>, is an interactive algorithm and DSA pattern visualization platform featuring modules like <strong>Sliding Window, Prefix Sum, Two Pointers, Sorting Algorithms, Graph Algorithms, and N-Queens Backtracking</strong> with controlled real-time execution visualization.
-</p>
-
-<div class="callout">
-  <p>
-    → Built AlgoViz with live glowing execution tracking, playback controls, speed adjustment, and async visualization handling without blocking the React main thread.
-  </p>
-</div>
-
-<p>
-  I also built <strong>Voyager</strong>, an AI-powered travel planning platform integrating <strong>Gemini AI, OpenStreetMap, Wikipedia image fetching, Leaflet.js route visualization, and PDF export generation</strong> with a custom backend budget-validation system.
-</p>
-
-<div class="callout">
-  <p>
-    → Reduced Voyager API response time by 60% using Python <strong>concurrent.futures</strong> for parallel OpenStreetMap and Wikipedia request pipelines.
-  </p>
-</div>
-
-<p>
-  During my <strong>Infosys SpringBoard Internship</strong>, I developed <strong>EDU2JOB</strong>, a SpringBoot + React platform recommending career paths using a <strong>Random Forest ML model with 87% accuracy</strong>, secured with JWT authentication and RBAC authorization.
-</p>
-
-<div class="callout">
-  <p>
-    → Improved EDU2JOB model performance by 22% through feature engineering, preprocessing optimization, and structured ML pipeline tuning.
-  </p>
-</div>
-
-<p>
-  My stack includes <strong>React.js, SpringBoot, Flask, Node.js, PostgreSQL, JWT Authentication, Scikit-learn, Docker, Tailwind CSS, and REST API Design</strong>. I also actively practice DSA and have solved <strong>500+ LeetCode problems</strong>.
-</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-tag reveal">TECH STACK</div>
-    <h2 class="sec-title reveal">SKILLS &amp; <span class="accent">TOOLS</span></h2>
-    <div class="skills-grid">
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">LANGUAGES</div>
-        <div class="skills-row">
-          <span class="s-chip g">Python</span><span class="s-chip g">Java</span><span class="s-chip g">JavaScript</span><span class="s-chip a">C / C++</span><span class="s-chip a">SQL</span><span class="s-chip w">HTML</span><span class="s-chip w">CSS</span>
-        </div>
-      </div>
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">FRONTEND</div>
-        <div class="skills-row">
-          <span class="s-chip g">React.js</span><span class="s-chip g">Tailwind</span><span class="s-chip a">Bootstrap</span><span class="s-chip a">EJS</span><span class="s-chip w">Leaflet.js</span>
-        </div>
-      </div>
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">BACKEND</div>
-        <div class="skills-row">
-          <span class="s-chip g">SpringBoot</span><span class="s-chip g">Flask</span><span class="s-chip g">Node.js</span><span class="s-chip a">Express.js</span><span class="s-chip a">FastAPI</span><span class="s-chip w">Hibernate</span>
-        </div>
-      </div>
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">AI / ML</div>
-        <div class="skills-row">
-          <span class="s-chip r">Random Forest</span><span class="s-chip r">Scikit-learn</span><span class="s-chip a">Gemini API</span><span class="s-chip a">Pandas</span><span class="s-chip a">NumPy</span><span class="s-chip w">Matplotlib</span>
-        </div>
-      </div>
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">DATABASES &amp; CLOUD</div>
-        <div class="skills-row">
-          <span class="s-chip g">PostgreSQL</span><span class="s-chip g">MySQL</span><span class="s-chip a">AWS</span><span class="s-chip w">Vercel</span><span class="s-chip w">Railway</span>
-        </div>
-      </div>
-      <div class="skill-cell reveal">
-        <div class="skill-cell-head">TOOLS &amp; CONCEPTS</div>
-        <div class="skills-row">
-          <span class="s-chip g">Git</span><span class="s-chip g">Docker</span><span class="s-chip a">Linux</span><span class="s-chip a">Postman</span><span class="s-chip r">JWT Auth</span><span class="s-chip r">Microservices</span><span class="s-chip w">DSA</span><span class="s-chip w">System Design</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="sec-tag reveal">WORK HISTORY</div>
-    <h2 class="sec-title reveal">EXPERIENCE</h2>
-    <div>
-      <div class="exp-entry reveal">
-        <div class="exp-left">
-          <div class="exp-period">AUG 2025<br>OCT 2025</div>
-          <div class="exp-company">INFOSYS<br>SPRINGBOARD 6.0</div>
-        </div>
-        <div class="exp-right">
-          <div class="exp-role">FULL STACK WEB DEVELOPER INTERN</div>
-          <ul class="exp-bullets">
-            <li>Built <strong>EDU2JOB</strong> — a SpringBoot web platform mapping user education &amp; skills to optimal career paths, shipped from zero to deployed within the program duration.</li>
-            <li>Engineered a <strong>Random Forest ML classifier</strong> matching users to industries and job titles via systematic feature engineering and data preprocessing.</li>
-            <li>Implemented <strong>JWT authentication</strong> with role-based access control and secure session management across the full application.</li>
-            <li>Optimized the ML inference pipeline achieving measurable accuracy improvements through iterative feature selection.</li>
-          </ul>
-          <div class="exp-stack">
-            <span class="exp-tag">SPRINGBOOT</span><span class="exp-tag">JAVA</span><span class="exp-tag">SCIKIT-LEARN</span><span class="exp-tag">PYTHON</span><span class="exp-tag">JWT</span><span class="exp-tag">MYSQL</span>
+    <main id="main">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> Software Engineer <span class="eyebrow-divider">/</span> Systems Builder</div>
+          <h1 id="hero-title">I build systems that make <span class="headline-accent">complexity visible.</span></h1>
+          <p class="hero-intro">Software engineering across backend systems, AI applications, interactive algorithms, and full-stack products.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#systems">Explore systems <span aria-hidden="true">↘</span></a>
+            <button class="button button-secondary" type="button" data-open-recruiter>Give me 90 seconds <span aria-hidden="true">↗</span></button>
+            <a class="text-link" id="resume-request" href="mailto:kgsivacharan2005@gmail.com?subject=Resume%20request">Request resume <span aria-hidden="true">↗</span></a>
+            <a class="text-link" id="resume-download" href="/resume.pdf" download hidden>Download resume <span aria-hidden="true">↓</span></a>
           </div>
+          <div class="hero-footnote"><span class="mono">PROFILE / STATIC SNAPSHOT</span><span>Selected work · 2026</span></div>
         </div>
-      </div>
-      <div class="exp-entry reveal">
-        <div class="exp-left">
-          <div class="exp-period">AUG 2023<br>MAY 2027</div>
-          <div class="exp-company" style="color:var(--amber)">GPCET<br>KURNOOL</div>
-        </div>
-        <div class="exp-right">
-          <div class="exp-role" style="color:var(--text2)">B.TECH — CSE</div>
-          <ul class="exp-bullets">
-            <li>Maintaining a <strong>CGPA of 8.55</strong> while concurrently shipping production projects and completing industry internships.</li>
-            <li>Core courses: <strong>DSA, OOP, DBMS, Operating Systems, Computer Networks</strong> — applied to real project architectures.</li>
-            <li>Active on LeetCode sharpening algorithmic problem-solving and competitive programming depth.</li>
-          </ul>
-          <div class="exp-stack">
-            <span class="exp-tag">CGPA 8.55</span><span class="exp-tag">DSA</span><span class="exp-tag">OOP</span><span class="exp-tag">DBMS</span><span class="exp-tag">LEETCODE</span>
+
+        <aside class="telemetry-panel" aria-label="Static profile snapshot">
+          <div class="panel-heading">
+            <div><span class="eyebrow-index">01 / PROFILE</span><h2>System snapshot</h2></div>
+            <span class="snapshot-tag">STATIC DATA</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <dl class="telemetry-list">
+            <div><dt>Identity</dt><dd>Siva Charan</dd></div>
+            <div><dt>Role</dt><dd>Software Engineer</dd></div>
+            <div><dt>Projects</dt><dd>04 <span class="value-note">first-class systems</span></dd></div>
+            <div><dt>LeetCode</dt><dd>500+ <span class="value-note">problems solved</span></dd></div>
+            <div><dt>Primary language</dt><dd>Java</dd></div>
+            <div><dt>Backend</dt><dd>Spring Boot</dd></div>
+            <div><dt>Frontend</dt><dd>React</dd></div>
+            <div><dt>Database</dt><dd>PostgreSQL</dd></div>
+          </dl>
+          <div class="panel-foot"><span class="status-indicator" aria-hidden="true"></span> Profile data · not live telemetry</div>
+        </aside>
+      </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="sec-tag reveal">WHAT I'VE BUILT</div>
-    <h2 class="sec-title reveal">PROJECTS</h2>
-    <div class="proj-grid">
-      <div class="proj-card reveal">
-        <div class="proj-num">01 / FULL STACK + AI</div>
-        <div class="proj-name">VOYAGER</div>
-        <p class="proj-desc">AI-powered travel planner generating personalized day-by-day itineraries. A custom backend budget enforcement algorithm prevents AI calculation drift, while parallel API requests via Python's concurrent.futures slash response times. Features one-click PDF export and interactive Leaflet maps.</p>
-        <div class="proj-highlights">
-          <span class="proj-highlight">60% reduction in API load time via concurrent.futures</span>
-          <span class="proj-highlight">Custom budget enforcement prevents AI errors</span>
-          <span class="proj-highlight">Gemini LLM + OpenStreetMap + Wikipedia pipeline</span>
-          <span class="proj-highlight">Glassmorphism UI · one-click PDF export</span>
+      <section class="proof-rail" aria-label="Engineering themes">
+        <div class="proof-rail-inner">
+          <span class="proof-label mono">ENGINEERING THEMES</span>
+          <span>Financial correctness</span><span>Recorded state</span><span>Verified AI output</span><span>Interpretable predictions</span>
         </div>
-        <div class="proj-stack">
-          <span class="proj-stack-tag">REACT.JS</span><span class="proj-stack-tag">FLASK</span><span class="proj-stack-tag">PYTHON</span><span class="proj-stack-tag">GEMINI API</span><span class="proj-stack-tag">LEAFLET.JS</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Siva2583/Voyager" target="_blank" rel="noopener" class="plink gh">GITHUB ↗</a>
-        </div>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-num">02 / DEV TOOL</div>
-        <div class="proj-name">ALGO<br>VIZ</div>
-        <p class="proj-desc">Interactive algorithm visualizer bridging theory to intuition. Live step-through of N-Queens, Dijkstra's, and tree traversals. Dedicated Patterns Module for Sliding Window, Two Pointers, and Merge Intervals — designed specifically for technical interview preparation.</p>
-        <div class="proj-highlights">
-          <span class="proj-highlight">10+ algorithms visualized interactively</span>
-          <span class="proj-highlight">Patterns module for interview prep</span>
-          <span class="proj-highlight">Dynamic routing between visualization modes</span>
-        </div>
-        <div class="proj-stack">
-          <span class="proj-stack-tag">REACT.JS</span><span class="proj-stack-tag">NODE.JS</span><span class="proj-stack-tag">EXPRESS.JS</span><span class="proj-stack-tag">TAILWIND CSS</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Siva2583/Algoviz" target="_blank" rel="noopener" class="plink gh">GITHUB ↗</a>
-        </div>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-num">03 / AI + ML · INTERNSHIP</div>
-        <div class="proj-name">EDU2JOB</div>
-        <p class="proj-desc">Career recommendation engine built during Infosys SpringBoard internship. Processes user education and skill data through a trained Random Forest model to match optimal industries and job titles. Includes full JWT authentication and role-based access control.</p>
-        <div class="proj-highlights">
-          <span class="proj-highlight">Random Forest classifier for career matching</span>
-          <span class="proj-highlight">JWT + role-based access control</span>
-          <span class="proj-highlight">Shipped during Infosys internship</span>
-        </div>
-        <div class="proj-stack">
-          <span class="proj-stack-tag">SPRINGBOOT</span><span class="proj-stack-tag">JAVA</span><span class="proj-stack-tag">SCIKIT-LEARN</span><span class="proj-stack-tag">PYTHON</span><span class="proj-stack-tag">JWT</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Siva2583/EDU2JOB-SPRING" target="_blank" rel="noopener" class="plink gh">GITHUB ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
-  <div class="container">
-    <div class="sec-tag reveal">NUMBERS</div>
-    <h2 class="sec-title reveal">METRICS <span class="accent">&amp; WINS</span></h2>
-    <div class="achieve-grid">
-      <div class="achieve-cell reveal">
-        <div class="achieve-val">8.55</div>
-        <div class="achieve-lbl">CGPA</div>
-        <div class="achieve-sub">TOP ACADEMIC STANDING</div>
-      </div>
-      <div class="achieve-cell reveal">
-        <div class="achieve-val">60%</div>
-        <div class="achieve-lbl">LOAD TIME REDUCED</div>
-        <div class="achieve-sub">VOYAGER · CONCURRENT API</div>
-      </div>
-      <div class="achieve-cell reveal">
-        <div class="achieve-val counter" data-target="6">0</div>
-        <div class="achieve-lbl">CERTIFICATIONS</div>
-        <div class="achieve-sub">INFOSYS · GS · MCKINSEY · TATA</div>
-      </div>
-      <div class="achieve-cell reveal">
-        <div class="achieve-val counter" data-target="3">0</div>
-        <div class="achieve-lbl">PROJECTS SHIPPED</div>
-        <div class="achieve-sub">PRODUCTION QUALITY</div>
-      </div>
-      <div class="achieve-cell reveal">
-        <div class="achieve-val" style="font-size:1.4rem;padding-top:0.9rem;font-family:var(--mono)">INFOSYS</div>
-        <div class="achieve-lbl">INDUSTRY INTERN</div>
-        <div class="achieve-sub">SPRINGBOARD 6.0 · 2025</div>
-      </div>
-      <div class="achieve-cell reveal">
-        <div class="achieve-val counter" data-target="15">0</div>
-        <div class="achieve-lbl">TECHNOLOGIES</div>
-        <div class="achieve-sub">IN PRODUCTION USE</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <div class="sec-tag reveal">ACADEMIC</div>
-    <h2 class="sec-title reveal">EDUCATION</h2>
-    <div>
-      <div class="edu-entry reveal">
-        <div class="edu-year">AUG 2023<br>MAY 2027</div>
-        <div>
-          <div class="edu-degree">B.TECH — CSE</div>
-          <div class="edu-inst">G. Pullaiah College of Engineering &amp; Technology · Kurnool, Andhra Pradesh</div>
-          <span class="edu-score">CGPA: 8.55</span>
-        </div>
-      </div>
-      <div class="edu-entry reveal">
-        <div class="edu-year">AUG 2021<br>MAY 2023</div>
-        <div>
-          <div class="edu-degree">INTERMEDIATE — MPC</div>
-          <div class="edu-inst">RACE Junior College · Kurnool · Board of Intermediate Education, AP</div>
-          <span class="edu-score">SCORE: 92.2%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="container">
-    <div class="sec-tag reveal">CREDENTIALS</div>
-    <h2 class="sec-title reveal">CERTIFICATIONS</h2>
-    <div class="certs-grid">
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">INFOSYS</div>
-        <div class="cert-name">SpringBoard Internship 6.0</div>
-        <div class="cert-badge">VERIFIED · 2025</div>
-      </div>
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">GOLDMAN SACHS · FORAGE</div>
-        <div class="cert-name">Software Engineering Job Simulation</div>
-        <div class="cert-badge">VERIFIED · INDUSTRY PROGRAM</div>
-      </div>
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">MCKINSEY &amp; COMPANY</div>
-        <div class="cert-name">McKinsey Forward Program</div>
-        <div class="cert-badge">VERIFIED · BUSINESS LEADERSHIP</div>
-      </div>
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">TATA · FORAGE</div>
-        <div class="cert-name">Tata Group Job Simulation</div>
-        <div class="cert-badge">VERIFIED · INDUSTRY PROGRAM</div>
-      </div>
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">NPTEL</div>
-        <div class="cert-name">Programming, Data Structures &amp; Algorithms using Python</div>
-        <div class="cert-badge">VERIFIED · IIT PROGRAM</div>
-      </div>
-      <div class="cert-cell reveal">
-        <div class="cert-issuer">UDEMY</div>
-        <div class="cert-name">The Complete Full-Stack Web Development Bootcamp</div>
-        <div class="cert-badge">VERIFIED · FULL STACK</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-tag reveal">LET'S TALK</div>
-    <h2 class="sec-title reveal">GET IN <span class="accent">TOUCH</span></h2>
-    <div class="contact-grid">
-      <div class="reveal">
-        <p>I'm actively looking for <strong>SWE internships, full-stack roles, and AI/ML projects</strong>. If you're building something ambitious and need a developer who ships — reach out.</p>
-        <div class="social-list">
-          <a href="mailto:kgsivacharan2005@gmail.com" class="social-item">
-            <span class="social-icon">EMAIL</span>
-            <span class="social-val">kgsivacharan2005@gmail.com</span>
-          </a>
-          <a href="https://www.linkedin.com/in/siva-charan-kg-72a900284/" target="_blank" rel="noopener" class="social-item">
-            <span class="social-icon">LINKEDIN</span>
-            <span class="social-val">siva-charan-kg</span>
-          </a>
-          <a href="https://github.com/Siva2583" target="_blank" rel="noopener" class="social-item">
-            <span class="social-icon">GITHUB</span>
-            <span class="social-val">Siva2583</span>
-          </a>
-          <a href="https://leetcode.com/u/siva_2853/" target="_blank" rel="noopener" class="social-item">
-            <span class="social-icon">LEETCODE</span>
-            <span class="social-val">siva_2853</span>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form-wrap reveal">
-        <div class="form-row">
+      <section class="content-section section-shell" id="systems" aria-labelledby="systems-title">
+        <div class="section-heading" data-reveal>
           <div>
-            <label class="form-label">Name</label>
-            <input type="text" class="form-input" placeholder="Jane Smith"/>
+            <div class="eyebrow section-kicker"><span class="eyebrow-line"></span> Engineering work <span class="mono">/ 04 systems</span></div>
+            <h2 id="systems-title">Different problems.<br /><span class="headline-accent">Explicit boundaries.</span></h2>
           </div>
-          <div>
-            <label class="form-label">Company</label>
-            <input type="text" class="form-input" placeholder="Acme Corp"/>
+          <p class="section-summary">Four projects, each centered on a concrete engineering question—not a technology checklist.</p>
+        </div>
+
+        <div class="system-grid">
+          <article class="system-card" data-reveal>
+            <div class="system-card-top"><span class="project-id">RP—001</span><span class="project-category">Financial system</span></div>
+            <div class="system-mark mark-ledger" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <h3>RevertPay</h3>
+            <p class="system-thesis">NO BALANCE COLUMN.</p>
+            <p class="system-description">An escrow workflow built around an immutable double-entry ledger, validated state changes, and auditable money movement.</p>
+            <div class="tag-list" aria-label="Technologies"><span>Spring Boot</span><span>PostgreSQL</span><span>React</span><span>JWT</span></div>
+            <div class="system-card-bottom"><span class="card-status"><span class="status-square"></span> Case study + local model</span><div class="system-card-links"><a class="card-link" href="/projects/revertpay.html">Open system <span aria-hidden="true">↗</span></a><a class="card-source" href="https://github.com/Siva2583/RevertPay-v-1.0" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          </article>
+
+          <article class="system-card" data-reveal>
+            <div class="system-card-top"><span class="project-id">AV—002</span><span class="project-category">Interactive algorithm engine</span></div>
+            <div class="system-mark mark-frames" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <h3>AlgoViz 2.0</h3>
+            <p class="system-thesis">EVERY STATE IS RECORDED.</p>
+            <p class="system-description">An algorithm learning environment that separates execution traces from playback, making each decision inspectable.</p>
+            <div class="tag-list" aria-label="Technologies"><span>React 19</span><span>JavaScript</span><span>Vite</span><span>Node test</span></div>
+            <div class="system-card-bottom"><span class="card-status"><span class="status-square"></span> Case study + local demo</span><div class="system-card-links"><a class="card-link" href="/projects/algoviz.html">Open system <span aria-hidden="true">↗</span></a><a class="card-source" href="https://github.com/Siva2583/Algoviz-2.0" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="card-source" href="https://algoviz-2-0.vercel.app/" target="_blank" rel="noopener noreferrer">Live ↗</a></div></div>
+          </article>
+
+          <article class="system-card" data-reveal>
+            <div class="system-card-top"><span class="project-id">VO—003</span><span class="project-category">AI travel system</span></div>
+            <div class="system-mark mark-verify" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Voyager</h3>
+            <p class="system-thesis">THE AI IS NOT TRUSTED.</p>
+            <p class="system-description">A travel planner that validates structured model output, verifies locations independently, and recalculates displayed costs.</p>
+            <div class="tag-list" aria-label="Technologies"><span>React</span><span>Node / Express</span><span>Groq</span><span>LocationIQ</span></div>
+            <div class="system-card-bottom"><span class="card-status"><span class="status-square"></span> Case study + mock pipeline</span><div class="system-card-links"><a class="card-link" href="/projects/voyager.html">Open system <span aria-hidden="true">↗</span></a><a class="card-source" href="https://github.com/Siva2583/Voyager-Node-FInal" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="card-source" href="https://voyager-node-f-inal-fefq.vercel.app/" target="_blank" rel="noopener noreferrer">Live ↗</a></div></div>
+          </article>
+
+          <article class="system-card" data-reveal>
+            <div class="system-card-top"><span class="project-id">EJ—004</span><span class="project-category">ML career system</span></div>
+            <div class="system-mark mark-ml" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <h3>EDU2JOB</h3>
+            <p class="system-thesis">JAVA HANDLES THE APP.<br />PYTHON HANDLES THE MODEL.</p>
+            <p class="system-description">A React and Spring Boot application that sends normalized student features to a separate Flask recommendation service.</p>
+            <div class="tag-list" aria-label="Technologies"><span>Spring Boot</span><span>Flask</span><span>Random Forest</span><span>PostgreSQL</span></div>
+            <div class="system-card-bottom"><span class="card-status"><span class="status-square"></span> Case study + schema demo</span><div class="system-card-links"><a class="card-link" href="/projects/edu2job.html">Open system <span aria-hidden="true">↗</span></a><a class="card-source" href="https://github.com/Siva2583/Edu2Job-Spring" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="principle-band" aria-labelledby="principle-title">
+        <div class="section-shell principle-layout" data-reveal>
+          <div><div class="eyebrow section-kicker"><span class="eyebrow-line"></span> Engineering philosophy</div><h2 id="principle-title">Make state,<br />assumptions, and<br /><span class="headline-accent">boundaries explicit.</span></h2></div>
+          <div class="principle-copy"><p>Financial state in RevertPay, recorded frames in AlgoViz, and external checks around AI output in Voyager point to the same idea: complex software is easier to reason about when its assumptions can be inspected.</p><a class="text-link" href="#about">More about how I work <span aria-hidden="true">↓</span></a></div>
+        </div>
+      </section>
+
+      <section class="content-section section-shell" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading compact-heading" data-reveal>
+          <div><div class="eyebrow section-kicker"><span class="eyebrow-line"></span> Experience &amp; education</div><h2 id="experience-title">Built in a<br /><span class="headline-accent">learning loop.</span></h2></div>
+          <p class="section-summary">A concise view of the program, degree, and evidence behind the project work.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-entry" data-reveal>
+            <div class="timeline-date mono">AUG 2025 — OCT 2025</div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content"><div class="entry-topline"><span class="entry-label">INTERNSHIP 6.0</span><span class="entry-org">INFOSYS SPRINGBOARD</span></div><h3>EDU2JOB · ML career recommendation platform</h3><p>Developed an end-to-end application connecting a React interface and Spring Boot API to a Python Flask machine-learning service. The repository documents feature preprocessing, a calibrated Random Forest pipeline, and ranked recommendations.</p><div class="tag-list"><span>Spring Boot</span><span>React</span><span>Flask</span><span>scikit-learn</span><span>PostgreSQL</span><span>JWT</span></div><a class="text-link inline-link" href="/projects/edu2job.html">Read the EDU2JOB case study <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="timeline-entry" data-reveal>
+            <div class="timeline-date mono">EXPECTED MAY 2027</div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content"><div class="entry-topline"><span class="entry-label">B.TECH · COMPUTER SCIENCE</span><span class="entry-org">GPCET</span></div><h3>G. Pullaiah College of Engineering and Technology</h3><p>Computer Science and Engineering · CGPA 8.51.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="credentials-section" aria-labelledby="credentials-title">
+        <div class="section-shell">
+          <div class="eyebrow section-kicker" data-reveal><span class="eyebrow-line"></span> Evidence, not hype</div>
+          <div class="credentials-grid" data-reveal>
+            <div class="credential-lead"><h2 id="credentials-title">A few<br /><span class="headline-accent">verifiable signals.</span></h2><p>Selected practice, certifications, and capabilities relevant to the work above.</p></div>
+            <div class="credential-list">
+              <div class="credential-row"><span class="credential-number">01</span><div><h3>500+ LeetCode problems</h3><p>Consistent data structures and algorithms practice.</p></div><a href="https://leetcode.com/u/siva_2853/" target="_blank" rel="noopener noreferrer" aria-label="Open Siva's LeetCode profile">↗</a></div>
+              <div class="credential-row"><span class="credential-number">02</span><div><h3>SAP Certified — Back-End Developer, ABAP Cloud</h3><p>Certification listed in the supplied portfolio brief.</p></div><span class="credential-mark" aria-hidden="true">SAP</span></div>
+              <div class="credential-row"><span class="credential-number">03</span><div><h3>NPTEL · Programming, Data Structures &amp; Algorithms using Python</h3><p>Course credential.</p></div><span class="credential-mark" aria-hidden="true">NPTEL</span></div>
+            </div>
           </div>
         </div>
-        <div>
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="jane@company.com"/>
+      </section>
+
+      <section class="content-section section-shell" id="about" aria-labelledby="about-title">
+        <div class="about-layout">
+          <div data-reveal><div class="eyebrow section-kicker"><span class="eyebrow-line"></span> About</div><h2 id="about-title">Curiosity, with<br /><span class="headline-accent">engineering discipline.</span></h2></div>
+          <div class="about-copy" data-reveal><p>I’m a Computer Science student who enjoys building software where the important decisions can be seen and checked.</p><p>That means treating money movement as ledger entries instead of mutable balances, recording algorithm states before playback, and verifying model-generated places rather than displaying coordinates on trust.</p><p>The projects span different domains, but I keep returning to one question: <strong>what should this system never assume?</strong></p></div>
         </div>
-        <div>
-          <label class="form-label">Message</label>
-          <textarea class="form-input" rows="5" placeholder="Tell me about the opportunity..."></textarea>
+        <div class="skills-block" id="skills">
+          <div class="skills-heading"><div class="eyebrow section-kicker"><span class="eyebrow-line"></span> Selected toolkit</div><p>Grouped by the work each tool supports.</p></div>
+          <div class="skills-grid">
+            <div class="skill-group"><h3>Languages</h3><p>Java · Python · JavaScript · SQL · C</p></div>
+            <div class="skill-group"><h3>Frontend</h3><p>React · HTML · CSS · Tailwind CSS</p></div>
+            <div class="skill-group"><h3>Backend</h3><p>Spring Boot · Spring Data JPA · Hibernate · Node.js · Express · Flask · REST APIs</p></div>
+            <div class="skill-group"><h3>Data &amp; ML</h3><p>PostgreSQL · MySQL · scikit-learn · Pandas · NumPy · Random Forest</p></div>
+            <div class="skill-group"><h3>Engineering</h3><p>Git · GitHub · GitHub Actions · Docker · AWS · Vercel · Railway · Linux · Postman</p></div>
+            <div class="skill-group"><h3>Concepts</h3><p>DSA · OOP · JWT · RBAC · CI/CD · Microservices · Agile</p></div>
+          </div>
         </div>
-        <button class="btn-send" onclick="submitForm(this)">SEND MESSAGE →</button>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-shell">
+          <div class="contact-heading" data-reveal><div><div class="eyebrow section-kicker"><span class="eyebrow-line"></span> Contact</div><h2 id="contact-title">Start with a<br /><span class="headline-accent">clear signal.</span></h2></div><p>For engineering roles, project questions, or a thoughtful conversation, send a note. The form stores messages only after the server and database are configured; until then, use the direct email link.</p></div>
+          <div class="contact-layout">
+            <div class="contact-details" data-reveal>
+              <a class="contact-email" href="mailto:kgsivacharan2005@gmail.com">kgsivacharan2005@gmail.com <span aria-hidden="true">↗</span></a>
+              <div class="social-links" aria-label="Profiles">
+                <a href="https://github.com/Siva2583" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>Siva2583 ↗</span></a>
+                <a href="https://www.linkedin.com/in/siva-charan-kg-72a900284/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>Siva Charan ↗</span></a>
+                <a href="https://leetcode.com/u/siva_2853/" target="_blank" rel="noopener noreferrer"><span>LeetCode</span><span>siva_2853 ↗</span></a>
+              </div>
+              <p class="contact-service-note"><span class="mono">DELIVERY</span> Server-side validation · rate limiting · private inbox. No browser-side secrets.</p>
+            </div>
+            <form class="contact-form" id="contact-form" action="/api/contact" method="post" data-reveal novalidate>
+              <div class="form-pair">
+                <label class="field"><span>Name <b aria-hidden="true">*</b></span><input name="name" autocomplete="name" maxlength="100" required placeholder="Your name" /></label>
+                <label class="field"><span>Email <b aria-hidden="true">*</b></span><input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@company.com" /></label>
+              </div>
+              <div class="form-pair">
+                <label class="field"><span>Company</span><input name="company" autocomplete="organization" maxlength="100" placeholder="Optional" /></label>
+                <label class="field"><span>Role</span><input name="role" maxlength="100" placeholder="Optional" /></label>
+              </div>
+              <label class="field"><span>LinkedIn (optional)</span><input name="linkedin" type="url" autocomplete="url" maxlength="250" placeholder="https://www.linkedin.com/in/…" /></label>
+              <label class="field"><span>Subject <b aria-hidden="true">*</b></span><input name="subject" maxlength="160" required placeholder="What would you like to discuss?" /></label>
+              <label class="field"><span>Message <b aria-hidden="true">*</b></span><textarea name="message" rows="5" minlength="20" maxlength="5000" required placeholder="A little context helps me reply well."></textarea><small>20–5,000 characters.</small></label>
+              <label class="honeypot" aria-hidden="true">Leave this field empty<input name="website" tabindex="-1" autocomplete="off" /></label>
+              <div class="form-submit-row"><button class="button button-primary send-button" type="submit"><span data-submit-label>Send message</span><span aria-hidden="true">→</span></button><p class="form-feedback" id="contact-feedback" role="status" aria-live="polite"></p></div>
+              <p class="form-footnote">Messages are sent to a private inbox when the contact API is configured. <a href="mailto:kgsivacharan2005@gmail.com">Email directly instead.</a></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><a class="wordmark" href="#top"><span class="wordmark-mark">SC</span><span>SIVA CHARAN</span></a><p>Software Engineer &amp; Systems Builder</p><div class="footer-links"><a href="https://github.com/Siva2583" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/siva-charan-kg-72a900284/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://leetcode.com/u/siva_2853/" target="_blank" rel="noopener noreferrer">LeetCode</a><a href="mailto:kgsivacharan2005@gmail.com">Email</a></div><span class="footer-year">© 2026 · PROFILE SNAPSHOT</span></div></footer>
+
+    <dialog class="utility-dialog command-dialog" id="command-dialog" aria-labelledby="command-title">
+      <div class="dialog-scrim" data-close-dialog></div>
+      <div class="command-panel">
+        <div class="command-heading"><div><span class="eyebrow-index">NAVIGATION / COMMAND</span><h2 id="command-title">Where to?</h2></div><button class="icon-button" type="button" aria-label="Close command palette" data-close-dialog>Esc</button></div>
+        <label class="command-input-wrap"><span class="sr-only">Search commands</span><span aria-hidden="true">⌕</span><input id="command-search" type="search" autocomplete="off" placeholder="Search projects, sections, or actions…" /></label>
+        <div class="command-group-label">COMMANDS <span class="mono">↑ ↓ / ENTER</span></div>
+        <div class="command-results" id="command-results" role="listbox" aria-label="Commands"></div>
+        <div class="command-footer"><span>Type <kbd>help</kbd> for commands</span><span>ESC CLOSES</span></div>
       </div>
-    </div>
-  </div>
-</section>
+    </dialog>
 
-<footer>
-  <div class="footer-id">SC<span>.</span>KG · 2025</div>
-  <div class="footer-mid">// DESIGNED &amp; BUILT BY <span>SIVA CHARAN KG</span> //</div>
-  <div class="footer-right">KURNOOL, AP · INDIA</div>
-</footer>
+    <dialog class="utility-dialog recruiter-dialog" id="recruiter-dialog" aria-labelledby="recruiter-title">
+      <div class="dialog-scrim" data-close-dialog></div>
+      <div class="recruiter-panel">
+        <div class="recruiter-topline">
+          <div class="recruiter-mode-label"><span>RECRUITER MODE</span><span>PROFILE BRIEF / 01</span></div>
+          <button class="icon-button" type="button" aria-label="Close recruiter mode" data-close-dialog>Close <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="recruiter-identity">
+          <span class="recruiter-monogram" aria-hidden="true">SC</span>
+          <div class="recruiter-identity-copy"><span class="recruiter-role">SOFTWARE ENGINEER / SYSTEMS BUILDER</span><h2 id="recruiter-title">Siva Charan</h2></div>
+          <span class="recruiter-identity-index">ENGINEERING<br />PORTFOLIO / 2026</span>
+        </div>
+        <p class="recruiter-intro">I build systems where important decisions stay inspectable: how money moves, how algorithms progress, how AI suggestions are checked, and how recommendations are ranked.</p>
 
-<script>
-const phrases=['FULL STACK DEVELOPER','AI APPLICATION ENGINEER','REACT + POSTGRESQL +SPRINGBOOT','INFOSYS INTERN · 2025','BUILDER OF REAL PRODUCTS'];
-let pi=0,ci=0,typing=true;
-function runTw(){
-  const el=document.getElementById('tw');
-  const p=phrases[pi];
-  if(typing){el.textContent=p.slice(0,ci+1);ci++;if(ci===p.length){typing=false;setTimeout(runTw,1800);return}setTimeout(runTw,65)}
-  else{el.textContent=p.slice(0,ci-1);ci--;if(ci===0){typing=true;pi=(pi+1)%phrases.length;setTimeout(runTw,300);return}setTimeout(runTw,30)}
-}
-runTw();
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-function runCounter(el){
-  const target=parseFloat(el.dataset.target);const dec=target%1!==0?2:0;
-  const dur=1600;const start=performance.now();
-  const step=now=>{const p=Math.min((now-start)/dur,1);el.textContent=(p*target).toFixed(dec);if(p<1)requestAnimationFrame(step);else el.textContent=target.toFixed(dec)};
-  requestAnimationFrame(step);
-}
-const cObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){runCounter(e.target);cObs.unobserve(e.target)}}),{threshold:0.5});
-document.querySelectorAll('[data-target]').forEach(el=>cObs.observe(el));
-const secs=document.querySelectorAll('section[id]');
-window.addEventListener('scroll',()=>{
-  let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-});
-function openMob(){document.getElementById('mobMenu').classList.add('open')}
-function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
-function submitForm(btn){
-  btn.textContent='MESSAGE SENT ✓';btn.style.background='transparent';btn.style.color='var(--green)';
-  setTimeout(()=>{btn.textContent='SEND MESSAGE →';btn.style.background='';btn.style.color=''},3000);
-}
-if(window.innerWidth>900){
-  const dot=document.createElement('div');
-  dot.style.cssText='position:fixed;width:6px;height:6px;border-radius:50%;background:var(--green);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);opacity:0.7;box-shadow:0 0 12px #00ff88;transition:left 0.05s,top 0.05s';
-  document.body.appendChild(dot);
-  document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
-}
-</script>
-</body>
+        <div class="recruiter-overview">
+          <section class="recruiter-work" aria-labelledby="recruiter-work-title">
+            <div class="recruiter-section-heading"><span class="eyebrow-index">01 / SELECTED WORK</span><h3 id="recruiter-work-title">Four systems.<br />Four engineering questions.</h3></div>
+            <div class="recruiter-project-list">
+              <a class="recruiter-project-row" href="/projects/revertpay.html" aria-label="Open RevertPay case study">
+                <span class="recruiter-project-number">01</span><span class="recruiter-project-copy"><strong>RevertPay</strong><small>Double-entry ledger · explicit state validation</small></span><span class="recruiter-project-tech">SPRING / POSTGRES</span><span class="recruiter-project-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="recruiter-project-row" href="/projects/algoviz.html" aria-label="Open AlgoViz 2.0 case study">
+                <span class="recruiter-project-number">02</span><span class="recruiter-project-copy"><strong>AlgoViz 2.0</strong><small>Algorithm traces recorded separately from playback</small></span><span class="recruiter-project-tech">REACT / JAVASCRIPT</span><span class="recruiter-project-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="recruiter-project-row" href="/projects/voyager.html" aria-label="Open Voyager case study">
+                <span class="recruiter-project-number">03</span><span class="recruiter-project-copy"><strong>Voyager</strong><small>Model fallbacks · geocoding checks · recomputed cost</small></span><span class="recruiter-project-tech">NODE / EXPRESS</span><span class="recruiter-project-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="recruiter-project-row" href="/projects/edu2job.html" aria-label="Open EDU2JOB case study">
+                <span class="recruiter-project-number">04</span><span class="recruiter-project-copy"><strong>EDU2JOB</strong><small>Prepared features · ranked career recommendations</small></span><span class="recruiter-project-tech">SPRING / FLASK</span><span class="recruiter-project-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </section>
+
+          <aside class="recruiter-profile" aria-labelledby="recruiter-profile-title">
+            <div class="recruiter-section-heading"><span class="eyebrow-index">02 / PROFILE</span><h3 id="recruiter-profile-title">Background &amp; evidence.</h3></div>
+            <dl class="recruiter-facts">
+              <div><dt>Education</dt><dd>B.Tech Computer Science · GPCET · expected May 2027 · CGPA 8.51</dd></div>
+              <div><dt>Experience</dt><dd>Infosys Springboard Internship 6.0 · EDU2JOB</dd></div>
+              <div><dt>Practice</dt><dd>500+ LeetCode problems</dd></div>
+              <div><dt>Credential</dt><dd>SAP Certified — Back-End Developer, ABAP Cloud</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="recruiter-actions">
+          <div class="recruiter-actions-copy"><span>CONTINUE THE CONVERSATION</span><p>For engineering roles, project questions, or a thoughtful introduction.</p></div>
+          <div class="recruiter-action-links">
+            <a class="button button-primary recruiter-contact" href="#contact">Contact Siva <span aria-hidden="true">↘</span></a>
+            <a class="text-link" id="recruiter-resume-request" href="mailto:kgsivacharan2005@gmail.com?subject=Resume%20request">Request resume PDF <span aria-hidden="true">↗</span></a>
+            <a class="text-link" id="recruiter-resume-download" href="/resume.pdf" download hidden>Download resume PDF <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <p class="resume-note" id="resume-note">The source resume PDF was not included in this repository; request a copy by email rather than follow a fabricated or missing download.</p>
+      </div>
+    </dialog>
+
+    <div class="toast" id="site-toast" role="status" aria-live="polite" hidden></div>
+    <noscript><p class="noscript-note">This portfolio’s project navigation and interactive demos use JavaScript. The project links, profile details, and direct email address remain available.</p></noscript>
+  </body>
 </html>
